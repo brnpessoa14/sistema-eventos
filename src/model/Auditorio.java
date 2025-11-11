@@ -1,9 +1,5 @@
 package model;
 
-/**
- * Auditório do campus com informações de infraestrutura.
- * Usa apenas conceitos básicos (herança simples e getters).
- */
 public class Auditorio extends Local {
     private boolean sistemaSom;
     private boolean traducaoSimultanea;
