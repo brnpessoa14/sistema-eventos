@@ -1,62 +1,57 @@
-# Sistema Acadêmico de Gestão de Eventos  
+Sistema Universitário de Eventos
 
-## 🧠 Descrição  
+Visão Geral
 
-Aplicação desenvolvida como parte da Avaliação Continuada da disciplina **Programação Orientada a Objetos (POO)**.  
-O sistema representa o **back-end de um gerenciador de eventos universitários**, como palestras, minicursos e seminários.  
-O objetivo é demonstrar o uso de conceitos fundamentais de POO por meio da modelagem de um domínio realista, envolvendo pessoas, locais e eventos.
+Este projeto apresenta uma aplicação desenvolvida para a disciplina de Programação Orientada a Objetos. A proposta é criar a base lógica de um sistema usado por universidades para organizar e administrar diferentes tipos de eventos acadêmicos.
+O foco está na construção das entidades essenciais, nas regras de negócio e na demonstração dos pilares de POO em um cenário realista.
 
----
+Organização do Código
 
-## 🧩 Estrutura do Projeto (MVC)
+A estrutura do projeto foi planejada seguindo o padrão MVC, separando claramente cada responsabilidade.
 
-O projeto segue a arquitetura **MVC (Model-View-Controller)**, separando as responsabilidades entre dados, controle e interface:
+Model
 
-* **`/src/model`**  
-  Contém as classes que formam a base do sistema e a lógica de negócio.  
-  - **Eventos:** `Evento` (abstrata) → `Palestra`, `Minicurso`, `Seminario`  
-  - **Locais:** `Local` (abstrata) → `Sala`, `Auditorio`, `Laboratorio`  
-  - **Pessoas:** `PessoaResponsavel` (abstrata) → `Instrutor`, `Organizador`  
-  - **Outras Entidades:** `Participante`, `Palestrante`
+Nesta camada estão todas as classes que representam o domínio da aplicação.
+Inclui categorias como:
+	•	Eventos: Palestra, Minicurso e Seminario
+	•	Ambientes: Sala, Auditorio e Laboratorio
+	•	Pessoas: Instrutor, Organizador, Palestrante e Participante
 
+Cada conjunto deriva de classes mais genéricas, permitindo composição, especialização e reaproveitamento.
 
-* **`/src`** 
-Inclui a classe `Programa.java`, que cria os objetos e demonstra o funcionamento completo do sistema.
+Controller e Execução
 
+O arquivo Programa.java funciona como ponto de partida da aplicação.
+Ele cria objetos, aplica as regras estabelecidas e demonstra o comportamento final do sistema em funcionamento.
 
+Conceitos de POO Aplicados
+	•	Abstração para definir estruturas amplas que servem como molde para elementos específicos.
+	•	Herança para permitir que classes especializadas ampliem características herdadas.
+	•	Encapsulamento para proteger dados internos e garantir consistência.
+	•	Polimorfismo para que objetos distintos possam ser tratados de forma unificada quando pertencem ao mesmo grupo conceitual.
 
----
+Demonstração do Funcionamento
 
-## 🧱 Conceitos de POO Utilizados  
+A aplicação realiza uma simulação que inclui criação de pessoas, locais e eventos, seguida de tentativas de inscrição.
 
-O projeto aplica de forma prática os pilares da orientação a objetos:
+Exemplo do fluxo mostrado:
+	•	Registro de participantes
+	•	Criação dos ambientes que serão usados
+	•	Configuração dos eventos com suas capacidades
+	•	Realização das inscrições com verificação de disponibilidade
 
-* **Abstração:** Uso de classes abstratas para definir estruturas genéricas que servem de base para especializações.  
-* **Herança:** Classes filhas aproveitam e expandem comportamentos das classes-mãe. Exemplo: `Palestra` herda de `Evento`.  
-* **Encapsulamento:** Atributos privados e protegidos, acessados apenas via métodos públicos (`get` e `set`), garantindo integridade dos dados.  
-* **Polimorfismo:** Um mesmo tipo genérico pode assumir formas diferentes em tempo de execução (ex: `Local` pode ser `Sala`, `Auditorio` ou `Laboratorio`).  
+Após a execução, o sistema exibe dados como a quantidade restante de vagas e uma listagem dos eventos nos quais cada participante está inscrito.
 
----
+Resultado ilustrativo
 
-## 🖥️ Exemplo de Execução  
+Vagas restantes em uma palestra: 298
+Vagas restantes em um minicurso: 29
 
-```plaintext
-Pessoas e Participantes criados.
-Locais criados.
-Eventos criados.
+Eventos associados a um mesmo participante:
+	•	O Futuro da Inteligência Artificial
+	•	Minicurso de Desenvolvimento Full Stack
 
- Testando Inscrições (Regras de Negócio)
-Tentando inscrever Ted Mosby na palestra 'O Futuro da Inteligência Artificial'...
--> Inscrição realizada com sucesso!
-Tentando inscrever Darth Vader na palestra 'O Futuro da Inteligência Artificial'...
--> Inscrição realizada com sucesso!
-Tentando inscrever Ted Mosby no 'Minicurso de Desenvolvimento Full-Stack'...
--> Inscrição realizada com sucesso!
+Objetivo Educacional
 
-RESULTADO FINAL
-Vagas restantes na Palestra: 298
-Vagas restantes no Minicurso: 29
-
-Eventos que o Ted Mosby está inscrito:
-  - O Futuro da Inteligência Artificial
-  - Minicurso de Desenvolvimento Full-Stack
+O propósito da atividade é demonstrar de maneira prática como os fundamentos da orientação a objetos funcionam quando aplicados a um contexto real.
+O projeto permite visualizar como entidades se relacionam, como regras são estruturadas e como o código pode ser organizado de forma clara e confiável.
